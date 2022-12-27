@@ -21,12 +21,16 @@ for x in range(2):
 
 string1=str(input('Введите первую строку '))
 string2=str(input('Введите вторую строку '))
-for i in range(len(string1)):
+string1_unique=[]
+for i in string1:
+    if i not in string1_unique:
+        string1_unique.append(i)
+for i in range(len(string1_unique)):
     count=0
     for j in range(len(string2)):
-        if string1[i]==string2[j]:
+        if string1_unique[i]==string2[j]:
             count+=1
-    print(f'{string1[i]} - {count}', end=', ')            
+    print(f'{string1_unique[i]} - {count}', end=', ')             
 
 #  Задайте список из N элементов, заполненных числами из 
 #  промежутка [-N, N]. Сдвиньте все элементы списка на 2 позиции вправо.
